@@ -1,0 +1,63 @@
+/* Container for the entire Contact Us page */
+.contact-container {
+    padding: 50px 0;
+  }
+  
+  /* Styling for the main contact card */
+  .contact-card {
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #ac4d81;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the submit button */
+  .submit-button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  /* Alert box styling */
+  .alert {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Social Media Card */
+  .social-media-card {
+    border-radius: 10px;
+    background-color: #84314a;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(203, 168, 168, 0.1);
+  }
+  
+  /* Social media icons container */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Styling for individual social icons */
+  .social-icon {
+    color: #dd7979;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #9e4357; /* You can change this to any color you prefer */
+  }
+  
+  /* Responsive design: For smaller screens, the cards should be smaller and centered */
+  @media (max-width: 768px) {
+    .contact-card, .social-media-card {
+      padding: 20px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+    }
+  }
+  
