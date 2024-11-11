@@ -1,27 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div style={styles.app}>
-      {/* Header Section */}
-      <header style={styles.header}>
-        <div style={styles.logo}>
-          {/* Correct path to logo */}
-          <img src="/Copy of Black and White Circle Business Logo.png" alt="Logo" style={styles.logoImage} />
-          <h1>MoodVillee</h1>
-        </div>
-        <nav>
-          <ul style={styles.nav}>
-            <li style={styles.navItem}><a href="/" style={styles.navLink}>Home</a></li>
-            <li style={styles.navItem}><a href="/Aboutus" style={styles.navLink}>Aboutus</a></li>
-            <li style={styles.navItem}><a href="/services" style={styles.navLink}>Services</a></li>
-            <li style={styles.navItem}><a href="/Contactus" style={styles.navLink}>Contactus</a></li>
-           
-            
-          </ul>
-        </nav>
-      </header>
-
+    <div style={styles.container}>
       {/* Main Content */}
       <main style={styles.mainContent}>
         <div style={styles.aboutLeft}>
@@ -91,55 +72,6 @@ const styles = {
     margin: 0,
     padding: 0,
   },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '20px',
-    background: '#C2185B',
-    color: '#F5B7B1 ',
-    alignItems: 'center',
-  },
-  logo: {
-    fontSize: '1.5rem',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoImage: {
-    width: '40px',
-    height: '40px',
-    marginRight: '10px',
-  },
-  nav: {
-    display: 'flex',
-    gap: '20px',
-    listStyle: 'none',
-  },
-  navItem: {},
-  navLink: {
-    textDecoration: 'none',
-    color: 'white',
-    fontSize: '1rem',
-  },
-  // header: {
-  //   display: 'flex',
-  //   justifyContent: 'space-between',
-  //   alignItems: 'center',
-  //   padding: '20px',
-  //   background: '#CC2B52',
-  //   color: '#fff',
-  // },
-  // navList: {
-  //   display: 'flex',
-  //   gap: '20px',
-  //   listStyle: 'none',
-  //   padding: 0,
-  // },
-  // navItem: {},
-  // navLink: {
-  //   textDecoration: 'none',
-  //   color: 'white',
-  //   fontSize: '1rem',
-  // },
   mainContent: {
     padding: '50px 20px',
     background: '#FFFFFF',

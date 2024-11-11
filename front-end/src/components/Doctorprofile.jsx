@@ -35,7 +35,7 @@ const DoctorProfile = () => {
     const doctorData = { doctorName, doctorEmail, specialty, yearsOfExperience, password, doctorImage, doctorBio };
 
     // Input validation: Check if all required fields are filled
-    if (!doctorName || !doctorEmail || !specialty || !yearsOfExperience || !password || !doctorBio) {
+    if (!doctorName || !doctorEmail || !specialty || !yearsOfExperience || !password || !doctorImage|| !doctorBio) {
       alert('Please fill in all required fields.');
       return;
     }
@@ -43,7 +43,7 @@ const DoctorProfile = () => {
     try {
       if (selectedDoctor) {
         // Update existing doctor
-        await axiosInstance.put(`http://localhost:5000/doctors/${selectedDoctor._id}`, doctorData);
+        await axiosInstance.put(`http://localhost:5000/doctor/doctors/${selectedDoctor._id}`, doctorData);
         alert('Doctor updated successfully!');
       } else {
         // Create new doctor
@@ -109,7 +109,7 @@ const DoctorProfile = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this doctor?');
     if (confirmDelete) {
       try {
-        await axiosInstance.delete(`http://localhost:5000/doctors/${id}`);
+        await axiosInstance.delete(`http://localhost:5000/doctor/doctors/${id}`);
         setDoctors(doctors.filter(doctor => doctor._id !== id)); // Remove from list
         alert('Doctor deleted successfully!');
       } catch (error) {
@@ -118,28 +118,71 @@ const DoctorProfile = () => {
       }
     }
   };
+  // const handleSaveDoctor = async () => {
+  //   // Input validation: Check if all required fields are filled
+  //   if (!doctorName || !doctorEmail || !specialty || !yearsOfExperience || !password || !doctorBio) {
+  //     alert('Please fill in all required fields.');
+  //     return;
+  //   }
+  
+  //   // Create FormData to send as multipart/form-data
+  //   const formData = new FormData();
+  //   formData.append('doctorName', doctorName);
+  //   formData.append('doctorEmail', doctorEmail);
+  //   formData.append('specialty', specialty);
+  //   formData.append('yearsOfExperience', yearsOfExperience);
+  //   formData.append('password', password);
+  //   formData.append('doctorBio', doctorBio);
+  
+  //   // If there is a doctor image, append it to the FormData
+  //   if (doctorImage) {
+  //     formData.append('doctorImage', doctorImage);
+  //   }
+  
+  //   try {
+  //     if (selectedDoctor) {
+  //       // Update existing doctor
+  //       await axiosInstance.put(`http://localhost:5000/doctor/doctors/${selectedDoctor._id}`, formData, {
+  //         headers: {
+  //           'Content-Type': 'multipart/form-data', // Important to specify for image uploads
+  //         },
+  //       });
+  //       alert('Doctor updated successfully!');
+  //     } else {
+  //       // Create new doctor
+  //       await axiosInstance.post('http://localhost:5000/doctor/doctors', formData, {
+  //         headers: {
+  //           'Content-Type': 'multipart/form-data', // Important to specify for image uploads
+  //         },
+  //       });
+  //       alert('Doctor created successfully!');
+  //     }
+  
+  //     // Refresh the doctor list after save
+  //     fetchDoctors(); // Refresh the doctor list after save
+  //     setSelectedDoctor(null); // Reset selected doctor
+  
+  //     // Clear form fields
+  //     setDoctorName('');
+  //     setDoctorEmail('');
+  //     setSpecialty('');
+  //     setYearsOfExperience('');
+  //     setPassword('');
+  //     setDoctorImage(null); // Clear the image
+  //     setDoctorBio(''); // Clear the bio
+  //     setShowForm(false); // Hide the form
+  //   } catch (error) {
+  //     console.error('Error saving doctor:', error);
+  //     alert('An error occurred while saving the doctor. Please try again.');
+  //   }
+  // };
+  
 
   return (
     
       <div style={styles.app}>
       {/* Header Section */}
-      <header style={styles.header}>
-        <div style={styles.logo}>
-          {/* Correct path to logo */}
-          <img src="/Copy of Black and White Circle Business Logo.png" alt="Logo" style={styles.logoImage} />
-          <h1>MoodVillee</h1>
-        </div>
-        <nav>
-          <ul style={styles.nav}>
-            <li style={styles.navItem}><a href="/" style={styles.navLink}>Home</a></li>
-            <li style={styles.navItem}><a href="/Aboutus" style={styles.navLink}>Aboutus</a></li>
-            <li style={styles.navItem}><a href="/services" style={styles.navLink}>Services</a></li>
-            <li style={styles.navItem}><a href="/Contactus" style={styles.navLink}>Contactus</a></li>
-            <li style={styles.navItem}><a href="/signin" style={styles.navLink}>Sign In</a></li>
-            
-          </ul>
-        </nav>
-      </header>
+      
       {/* Create/Edit Doctor Form Section */}
       {showForm && (
         <div className="mb-4" style={styles.formBoxContainer}>

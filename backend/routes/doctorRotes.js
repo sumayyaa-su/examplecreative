@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' }); 
 const Doctor = require('../model/doctorData')
 const router = express.Router();
 
@@ -9,6 +11,29 @@ router.post('/doctors', async (req, res) => {
     res.status(201).json(newDoctor);
   } catch (error) {
     res.status(400).json({ error: error.message });
+  }
+});
+router.post('/doctors', upload.single('doctorImage'), async (req, res) => {
+  try {
+    const { doctorName, doctorEmail, specialty, yearsOfExperience, password, doctorBio } = req.body;
+    const doctorImage = req.file ? `/uploads/${req.file.filename}` : null; // Save the image path
+
+    // Create a new doctor object and save it to the database (using your database model, e.g. Mongoose)
+    const newDoctor = new Doctor({
+      doctorName,
+      doctorEmail,
+      specialty,
+      yearsOfExperience,
+      password,
+      doctorBio,
+      doctorImage,
+    });
+
+    await newDoctor.save();
+    res.status(201).json(newDoctor); // Respond with the created doctor
+  } catch (error) {
+    console.error('Error creating doctor:', error);
+    res.status(500).json({ message: 'Error creating doctor' });
   }
 });
 

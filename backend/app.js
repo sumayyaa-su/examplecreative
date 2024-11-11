@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const doctorRoutes = require('./routes/doctorRotes');
 
 // Multer configuration (assuming multer.js is inside the config folder)
 const upload = require('./config/multer');

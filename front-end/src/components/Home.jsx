@@ -13,22 +13,20 @@ const HomePage = () => {
     <div style={styles.app}>
       {/* Header Section */}
       <header style={styles.header}>
-        <div style={styles.logo}>
-          {/* Correct path to logo */}
-          <img src="/Copy of Black and White Circle Business Logo.png" alt="Logo" style={styles.logoImage} />
-          <h1>MoodVillee</h1>
-        </div>
-        <nav>
-          <ul style={styles.nav}>
-            <li style={styles.navItem}><a href="/" style={styles.navLink}>Home</a></li>
-            <li style={styles.navItem}><a href="/Aboutus" style={styles.navLink}>Aboutus</a></li>
-            <li style={styles.navItem}><a href="/services" style={styles.navLink}>Services</a></li>
-            <li style={styles.navItem}><a href="/Contactus" style={styles.navLink}>Contactus</a></li>
-            <li style={styles.navItem}><a href="/signin" style={styles.navLink}>Sign In</a></li>
-            
-          </ul>
-        </nav>
-      </header>
+  <div style={styles.logo}>
+    {/* Correct path to logo */}
+    {/* <img
+      src="/Copy of Black and White Circle Business Logo.png"
+      alt="Logo"
+      style={styles.logoImage}
+    /> */}
+    <div style={styles.headerText}>
+    <h3 style={styles.headerH3}>Navigate Your Emotions...Embrace Your Feelings</h3>
+<h4 style={styles.headerH4}>Your Emotions Are Valued, Your Feelings Matter</h4>
+
+    </div>
+  </div>
+</header>
 
       {/* Search Bar */}
       <div style={styles.searchSection}>
@@ -88,43 +86,59 @@ const HomePage = () => {
   );
 };
 
-const styles = {
-  app: {
-    fontFamily: 'Arial, sans-serif',
-    margin: 0,
-    padding: 0,
-    boxSizing: 'border-box',
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '20px',
-    background: '#C2185B',
-    color: '#F5B7B1 ',
-    alignItems: 'center',
-  },
-  logo: {
-    fontSize: '1.5rem',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoImage: {
-    width: '40px',
-    height: '40px',
-    marginRight: '10px',
-  },
-  nav: {
-    display: 'flex',
-    gap: '20px',
-    listStyle: 'none',
-  },
-  navItem: {},
-  navLink: {
-    textDecoration: 'none',
-    color: 'white',
-    fontSize: '1rem',
-  },
-  // Search Bar Styles
+  const styles = {
+    header: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '20px 40px',
+      background: '#C2185B',
+      color: '#fff',
+      alignItems: 'center',
+      width: '100%',
+      boxSizing: 'border-box',
+      fontFamily:  "'Calendas Plus', serif", // Apply Inter font to the entire header
+    },
+    logo: {
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: '1.5rem',
+    },
+    logoImage: {
+      width: '50px',
+      height: '50px',
+      marginRight: '15px',
+    },
+    headerText: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center', // Center text within the header
+    },
+    headerH3: {
+      fontSize: '2.5rem',
+      fontWeight: '700',
+      color: '#fff',
+      letterSpacing: '2px',
+      textShadow: '3px 3px 6px rgba(0, 0, 0, 0.4)', 
+      textTransform: 'uppercase',
+      margin: 0,
+      lineHeight: '1.3',
+      fontFamily:  "'Calendas Plus', serif", // Apply Inter font to h3
+    },
+    headerH4: {
+      fontSize: '1.6rem',
+      fontWeight: '400',
+      color: '#F5B7B1',
+      marginTop: '10px',
+      letterSpacing: '1.5px',
+      textShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)',
+      lineHeight: '1.4',
+      fontFamily:  "'Calendas Plus', serif", // Apply Inter font to h4
+    },
+
+
+
+ // Search Bar Styles
   searchSection: {
     background: '#FFFFFF',
     padding: '20px 0',

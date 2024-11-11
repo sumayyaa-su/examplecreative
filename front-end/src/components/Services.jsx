@@ -1,27 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
 const Services = () => {
   return (
-    <div style={styles.app}>
-      {/* Header Section */}
-      <header style={styles.header}>
-        <div style={styles.logo}>
-          {/* Correct path to logo */}
-          <img src="/Copy of Black and White Circle Business Logo.png" alt="Logo" style={styles.logoImage} />
-          <h1>MoodVillee</h1>
-        </div>
-        <nav>
-          <ul style={styles.nav}>
-            <li style={styles.navItem}><a href="/" style={styles.navLink}>Home</a></li>
-            <li style={styles.navItem}><a href="/Aboutus" style={styles.navLink}>Aboutus</a></li>
-            <li style={styles.navItem}><a href="/services" style={styles.navLink}>Services</a></li>
-            <li style={styles.navItem}><a href="/Contactus" style={styles.navLink}>Contactus</a></li>
-            
-            
-          </ul>
-        </nav>
-      </header>
-
+    <div style={styles.container}>
       {/* Main Content */}
       <main style={styles.mainContent}>
         <div style={styles.servicesHeader}>
@@ -34,33 +15,37 @@ const Services = () => {
         <div style={styles.servicesList}>
           {/* Service Card 1 */}
           <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Psychology Articles</h3>
+            <h3 style={styles.serviceTitle}>Personal Chat with Experienced Doctors</h3>
             <p style={styles.serviceDescription}>
-              We curate evidence-based, well-researched articles on various psychology topics to help you better understand human behavior and mental health.
+            "Connect with licensed mental health professionals for private, one-on-one chats. Whether it's stress, anxiety, or other concerns, our experts provide personalized support and guidance."
             </p>
           </div>
 
           {/* Service Card 2 */}
           <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Brain Science Simplified</h3>
+            <h3 style={styles.serviceTitle}> Trusted Environment</h3>
             <p style={styles.serviceDescription}>
-              We break down complex neuroscience concepts into easily digestible content so you can understand the science behind your mind.
+            At MoodVillee, we ensure a safe, confidential space where you can express yourself freely, with complete respect for your privacy and well-being."
             </p>
           </div>
 
           {/* Service Card 3 */}
           <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Online Workshops</h3>
+            <h3 style={styles.serviceTitle}>Experienced Doctors</h3>
             <p style={styles.serviceDescription}>
-              Join our interactive workshops where we explore various topics in psychology and neuroscience. Perfect for students, professionals, and curious minds.
+            Our team consists of highly qualified professionals with years of experience in psychology, neuroscience, and mental health.
             </p>
           </div>
 
           {/* Service Card 4 */}
           <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Consulting Services</h3>
+            <h3 style={styles.serviceTitle}>Personal Space for Emotions</h3>
             <p style={styles.serviceDescription}>
-              We offer consulting for individuals, schools, and organizations who want to learn more about the brain, behavior, and how to optimize mental well-being.
+            We offer a safe, supportive space where you can openly share your feelings, whether in private sessions or through our community. It's a place to heal, reflect, and grow emotionally."
+
+
+
+
             </p>
           </div>
         </div>
@@ -81,35 +66,6 @@ const styles = {
     margin: 0,
     padding: 0,
   },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '20px',
-    background: '#C2185B',
-    color: '#F5B7B1 ',
-    alignItems: 'center',
-  },
-  logo: {
-    fontSize: '1.5rem',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoImage: {
-    width: '40px',
-    height: '40px',
-    marginRight: '10px',
-  },
-  nav: {
-    display: 'flex',
-    gap: '20px',
-    listStyle: 'none',
-  },
-  navItem: {},
-  navLink: {
-    textDecoration: 'none',
-    color: 'white',
-    fontSize: '1rem',
-  },
   mainContent: {
     padding: '50px 20px',
     background: '#f8f8f8',
@@ -121,7 +77,7 @@ const styles = {
   pageTitle: {
     fontSize: '2.5rem',
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FF80AB',
   },
   pageDescription: {
     fontSize: '1.2rem',
